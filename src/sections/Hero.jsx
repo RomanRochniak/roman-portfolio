@@ -12,7 +12,7 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 const GITHUB_URL = "https://github.com/RomanRochniak";
 const LINKEDIN_URL = "https://www.linkedin.com/in/roman-rochniak-aaa9b1326/";
 const EMAIL_URL = "mailto:rochnyak180405@gmail.com";
-const RESUME_URL = "#";
+const RESUME_URL = "/Roman_Rochniak_Backend_Resume.pdf";
 
 const skills = [
   "Python",
