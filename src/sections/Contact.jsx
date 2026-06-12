@@ -101,37 +101,40 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+    <section
+      id="contact"
+      className="py-20 sm:py-24 lg:py-32 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-56 sm:w-64 h-56 sm:h-64 bg-highlight/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             Contact
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-5 sm:mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Let&apos;s connect{" "}
             <span className="font-serif italic font-normal text-white">
               and build something real.
             </span>
           </h2>
 
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
+          <p className="text-sm sm:text-base text-muted-foreground animate-fade-in animation-delay-200 max-w-2xl mx-auto">
             I&apos;m open to internships, apprenticeships, junior developer
             roles, Python/backend opportunities, and teams where I can learn,
             contribute, and grow through real engineering work.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto w-full">
           {/* Contact Form */}
-          <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6" onSubmit={handleSubmit}>
+          <div className="glass w-full max-w-full p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+            <form className="space-y-5 sm:space-y-6 w-full" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
@@ -146,7 +149,7 @@ export const Contact = () => {
                   onChange={(event) =>
                     setFormData({ ...formData, name: event.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="w-full max-w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base"
                 />
               </div>
 
@@ -167,7 +170,7 @@ export const Contact = () => {
                   onChange={(event) =>
                     setFormData({ ...formData, email: event.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                  className="w-full max-w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base"
                 />
               </div>
 
@@ -188,12 +191,12 @@ export const Contact = () => {
                   onChange={(event) =>
                     setFormData({ ...formData, message: event.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                  className="w-full max-w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none text-base"
                 />
               </div>
 
               <Button
-                className="w-full"
+                className="w-full min-h-12 sm:min-h-14 text-sm sm:text-base"
                 type="submit"
                 size="lg"
                 disabled={isLoading}
@@ -210,32 +213,34 @@ export const Contact = () => {
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3 p-4 rounded-xl ${
+                  className={`flex items-start gap-3 p-4 rounded-xl ${
                     submitStatus.type === "success"
                       ? "bg-green-500/10 border border-green-500/20 text-green-400"
                       : "bg-red-500/10 border border-red-500/20 text-red-400"
                   }`}
                 >
                   {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   )}
 
-                  <p className="text-sm">{submitStatus.message}</p>
+                  <p className="text-sm leading-relaxed">
+                    {submitStatus.message}
+                  </p>
                 </div>
               )}
             </form>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 animate-fade-in animation-delay-400">
-            <div className="glass rounded-3xl p-8">
-              <h3 className="text-xl font-semibold mb-6">
+          <div className="space-y-6 animate-fade-in animation-delay-400 w-full max-w-full">
+            <div className="glass rounded-2xl sm:rounded-3xl p-5 sm:p-8">
+              <h3 className="text-lg sm:text-xl font-semibold mb-5 sm:mb-6">
                 Contact Information
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {contactInfo.map((item) => (
                   <a
                     key={item.label}
@@ -246,18 +251,20 @@ export const Contact = () => {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    className="flex items-center gap-4 p-3 sm:p-4 rounded-xl hover:bg-surface transition-colors group min-w-0"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
 
-                    <div>
+                    <div className="min-w-0">
                       <div className="text-sm text-muted-foreground">
                         {item.label}
                       </div>
 
-                      <div className="font-medium">{item.value}</div>
+                      <div className="font-medium break-words text-sm sm:text-base">
+                        {item.value}
+                      </div>
                     </div>
                   </a>
                 ))}
@@ -265,13 +272,13 @@ export const Contact = () => {
             </div>
 
             {/* Availability Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30">
+            <div className="glass rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse flex-shrink-0" />
                 <span className="font-medium">Open to Work</span>
               </div>
 
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 I&apos;m currently open to software engineering internships,
                 apprenticeships, entry-level developer roles, and Python/backend
                 opportunities. Remote, hybrid, and relocation opportunities are
