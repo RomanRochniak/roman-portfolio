@@ -34,7 +34,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Location",
     value: "Akron, Ohio",
-    href: "#",
+    href: null,
   },
 ];
 
@@ -56,7 +56,10 @@ export const Contact = () => {
     event.preventDefault();
 
     setIsLoading(true);
-    setSubmitStatus({ type: null, message: "" });
+    setSubmitStatus({
+      type: null,
+      message: "",
+    });
 
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -85,7 +88,11 @@ export const Contact = () => {
         message: "Message sent successfully. I'll get back to you soon.",
       });
 
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error("EmailJS error:", error);
 
@@ -105,8 +112,10 @@ export const Contact = () => {
       id="contact"
       className="py-20 sm:py-24 lg:py-32 relative overflow-hidden"
     >
+      {/* Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-primary/5 rounded-full blur-3xl" />
+
         <div className="absolute bottom-1/4 right-1/4 w-56 sm:w-64 h-56 sm:h-64 bg-highlight/5 rounded-full blur-3xl" />
       </div>
 
@@ -118,25 +127,34 @@ export const Contact = () => {
           </span>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-5 sm:mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Let&apos;s connect{" "}
+            Let&apos;s talk about
             <span className="font-serif italic font-normal text-white">
-              and build something real.
+              {" "}
+              software and real products.
             </span>
           </h2>
 
           <p className="text-sm sm:text-base text-muted-foreground animate-fade-in animation-delay-200 max-w-2xl mx-auto">
-            I&apos;m open to internships, apprenticeships, junior developer
-            roles, Python/backend opportunities, and teams where I can learn,
-            contribute, and grow through real engineering work.
+            I&apos;m open to software engineering and Python backend
+            opportunities where I can contribute to real products, backend
+            systems, APIs, integrations, and the engineering work behind
+            them.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto w-full">
           {/* Contact Form */}
           <div className="glass w-full max-w-full p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-5 sm:space-y-6 w-full" onSubmit={handleSubmit}>
+            <form
+              className="space-y-5 sm:space-y-6 w-full"
+              onSubmit={handleSubmit}
+            >
+              {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Name
                 </label>
 
@@ -147,12 +165,16 @@ export const Contact = () => {
                   placeholder="Your name..."
                   value={formData.name}
                   onChange={(event) =>
-                    setFormData({ ...formData, name: event.target.value })
+                    setFormData({
+                      ...formData,
+                      name: event.target.value,
+                    })
                   }
                   className="w-full max-w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base"
                 />
               </div>
 
+              {/* Email */}
               <div>
                 <label
                   htmlFor="email"
@@ -168,12 +190,16 @@ export const Contact = () => {
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(event) =>
-                    setFormData({ ...formData, email: event.target.value })
+                    setFormData({
+                      ...formData,
+                      email: event.target.value,
+                    })
                   }
                   className="w-full max-w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-base"
                 />
               </div>
 
+              {/* Message */}
               <div>
                 <label
                   htmlFor="message"
@@ -186,15 +212,19 @@ export const Contact = () => {
                   id="message"
                   rows={5}
                   required
-                  placeholder="Tell me about the opportunity or project..."
+                  placeholder="Tell me about the role, project, or team..."
                   value={formData.message}
                   onChange={(event) =>
-                    setFormData({ ...formData, message: event.target.value })
+                    setFormData({
+                      ...formData,
+                      message: event.target.value,
+                    })
                   }
                   className="w-full max-w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none text-base"
                 />
               </div>
 
+              {/* Submit Button */}
               <Button
                 className="w-full min-h-12 sm:min-h-14 text-sm sm:text-base"
                 type="submit"
@@ -211,6 +241,7 @@ export const Contact = () => {
                 )}
               </Button>
 
+              {/* Status */}
               {submitStatus.type && (
                 <div
                   className={`flex items-start gap-3 p-4 rounded-xl ${
@@ -241,33 +272,56 @@ export const Contact = () => {
               </h3>
 
               <div className="space-y-3 sm:space-y-4">
-                {contactInfo.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      item.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="flex items-center gap-4 p-3 sm:p-4 rounded-xl hover:bg-surface transition-colors group min-w-0"
-                  >
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-
-                    <div className="min-w-0">
-                      <div className="text-sm text-muted-foreground">
-                        {item.label}
+                {contactInfo.map((item) => {
+                  const content = (
+                    <>
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                        <item.icon className="w-5 h-5 text-primary" />
                       </div>
 
-                      <div className="font-medium break-words text-sm sm:text-base">
-                        {item.value}
+                      <div className="min-w-0">
+                        <div className="text-sm text-muted-foreground">
+                          {item.label}
+                        </div>
+
+                        <div className="font-medium break-words text-sm sm:text-base">
+                          {item.value}
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                ))}
+                    </>
+                  );
+
+                  if (!item.href) {
+                    return (
+                      <div
+                        key={item.label}
+                        className="flex items-center gap-4 p-3 sm:p-4 rounded-xl min-w-0"
+                      >
+                        {content}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target={
+                        item.href.startsWith("http")
+                          ? "_blank"
+                          : undefined
+                      }
+                      rel={
+                        item.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      className="flex items-center gap-4 p-3 sm:p-4 rounded-xl hover:bg-surface transition-colors group min-w-0"
+                    >
+                      {content}
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
@@ -275,14 +329,18 @@ export const Contact = () => {
             <div className="glass rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse flex-shrink-0" />
-                <span className="font-medium">Open to Work</span>
+
+                <span className="font-medium">
+                  Open to Software Opportunities
+                </span>
               </div>
 
               <p className="text-muted-foreground text-sm leading-relaxed">
-                I&apos;m currently open to software engineering internships,
-                apprenticeships, entry-level developer roles, and Python/backend
-                opportunities. Remote, hybrid, and relocation opportunities are
-                all worth discussing.
+                I&apos;m interested in software engineering and Python backend
+                roles involving APIs, databases, integrations, backend
+                workflows, and real product development. I&apos;m always glad
+                to connect with engineering teams and discuss where my
+                experience could be useful.
               </p>
             </div>
           </div>

@@ -3,18 +3,17 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 
 const projects = [
   {
-    title: "RoshaClub / CapstoneGym",
+    title: "Rosha Club / CapstoneGym",
     description:
-      "A full-stack gym membership management system built with Django. It includes authentication, membership plans, Stripe payments, Google Pay support, an AI fitness assistant, community features, PostgreSQL on Neon, and deployment on Render.",
+      "A deployed membership platform where I built the backend around users, memberships, payments, relational data, community workflows, and an AI assistant. The Stripe payment flow updates membership state only after payment confirmation, while the AI feature works with user context, conversation history, caching, rate limiting, and external model integration.",
     image: "/projects/capstonegym.png",
     tags: [
       "Python",
       "Django",
       "PostgreSQL",
-      "Neon",
       "Stripe",
       "Gemini API",
-      "Render",
+      "Docker",
     ],
     link: "https://capstonegym.onrender.com/",
     github: "https://github.com/RomanRochniak/CapstoneGym",
@@ -22,7 +21,7 @@ const projects = [
   {
     title: "Andriy Rochnyak Photography",
     description:
-      "A production portfolio website for a professional photographer, built as a real client project. It includes responsive layouts, high-resolution galleries, custom sliders, animations, awards and publications pages, SEO improvements, and custom domain deployment.",
+      "A production website built for a professional photographer from the first design discussions through launch and ongoing updates. The main challenge was presenting large, high-resolution image collections without making the site feel slow, while keeping galleries, navigation, and mobile layouts clean and easy to use.",
     image: "/projects/andriy-photography.png",
     tags: [
       "React",
@@ -39,10 +38,15 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Bg glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+    <section
+      id="projects"
+      className="relative py-24 overflow-hidden"
+    >
+      {/* Background Glows */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -52,17 +56,17 @@ export const Projects = () => {
           </span>
 
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Real projects
+            Software built around
             <span className="font-serif italic font-normal text-white">
               {" "}
-              I&apos;ve built and deployed.
+              real problems.
             </span>
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A focused selection of practical web applications, client work,
-            backend systems, AI features, payments, and deployed production-style
-            projects.
+            A selection of work involving backend systems, payments, AI
+            integrations, client requirements, deployment, and real product
+            decisions.
           </p>
         </div>
 
@@ -71,21 +75,28 @@ export const Projects = () => {
           {projects.map((project, idx) => (
             <div
               key={project.title}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 border border-transparent hover:border-primary/30 transition-all duration-500"
+              style={{
+                animationDelay: `${(idx + 1) * 100}ms`,
+              }}
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 <div
-                  className="absolute inset-0 
-                  bg-gradient-to-t from-card via-card/50
-                  to-transparent opacity-60"
+                  className="
+                    absolute inset-0
+                    bg-gradient-to-t
+                    from-card
+                    via-card/50
+                    to-transparent
+                    opacity-60
+                  "
                 />
 
                 {/* Overlay Links */}
@@ -128,15 +139,19 @@ export const Projects = () => {
                     aria-label={`Open ${project.title}`}
                   >
                     <ArrowUpRight
-                      className="w-5 h-5 
-                      text-muted-foreground group-hover:text-primary
-                      group-hover:translate-x-1 
-                      group-hover:-translate-y-1 transition-all"
+                      className="
+                        w-5 h-5
+                        text-muted-foreground
+                        group-hover:text-primary
+                        group-hover:translate-x-1
+                        group-hover:-translate-y-1
+                        transition-all
+                      "
                     />
                   </a>
                 </div>
 
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
                 </p>
 
@@ -144,7 +159,20 @@ export const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                      className="
+                        px-4 py-1.5
+                        rounded-full
+                        bg-surface
+                        text-xs
+                        font-medium
+                        border
+                        border-border/50
+                        text-muted-foreground
+                        hover:border-primary/50
+                        hover:text-primary
+                        transition-all
+                        duration-300
+                      "
                     >
                       {tag}
                     </span>
@@ -155,7 +183,7 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View More CTA */}
+        {/* GitHub CTA */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
           <a
             href="https://github.com/RomanRochniak"

@@ -20,8 +20,8 @@ const socialLinks = [
 
 const footerLinks = [
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
   { href: "#testimonials", label: "Certificates" },
   { href: "#contact", label: "Contact" },
 ];
@@ -30,11 +30,10 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-border overflow-hidden">
-      {/* Background glow */}
+    <footer className="relative overflow-hidden">
+      {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 py-12 relative z-10">
@@ -42,19 +41,22 @@ export const Footer = () => {
           <div className="grid lg:grid-cols-[1.3fr_1fr_1fr] gap-10 items-start">
             {/* Brand */}
             <div>
-              <a href="#" className="inline-flex items-center text-2xl font-bold tracking-tight">
+              <a
+                href="#home"
+                className="inline-flex items-center text-2xl font-bold tracking-tight hover:text-primary transition-colors"
+              >
                 RR<span className="text-primary">.</span>
               </a>
 
               <p className="mt-4 text-sm text-muted-foreground max-w-md leading-relaxed">
-                Roman Rochniak — Python developer building practical web apps,
-                backend systems, AI-powered features, and deployed real-world
-                projects.
+                Roman Rochniak — Python Software Developer focused on backend
+                systems, APIs, databases, integrations, and practical software
+                built around real product needs.
               </p>
 
               <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-4 py-2 text-sm text-primary">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Open to Work
+                Open to Software Opportunities
               </div>
             </div>
 
@@ -89,7 +91,11 @@ export const Footer = () => {
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    target={social.href.startsWith("http") ? "_blank" : undefined}
+                    target={
+                      social.href.startsWith("http")
+                        ? "_blank"
+                        : undefined
+                    }
                     rel={
                       social.href.startsWith("http")
                         ? "noopener noreferrer"
@@ -112,13 +118,14 @@ export const Footer = () => {
             </div>
           </div>
 
+          {/* Bottom */}
           <div className="mt-10 pt-6 border-t border-border/70 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
               © {currentYear} Roman Rochniak. All rights reserved.
             </p>
 
             <p className="text-xs text-muted-foreground">
-              Built with React, Tailwind CSS, Vite, and too much caffeine.
+              Built with React, TypeScript, Tailwind CSS, and Vite.
             </p>
           </div>
         </div>

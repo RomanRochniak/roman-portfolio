@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
   { href: "#testimonials", label: "Certificates" },
 ];
 
@@ -14,7 +14,10 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleContactClick = () => {
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .querySelector("#contact")
+      ?.scrollIntoView({ behavior: "smooth" });
+
     setIsMobileMenuOpen(false);
   };
 
@@ -35,21 +38,22 @@ export const Navbar = () => {
       } z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
         <a
-          href="#"
-          className="text-xl font-bold tracking-tight hover:text-primary"
+          href="#home"
+          className="text-xl font-bold tracking-tight text-foreground hover:text-primary transition-colors"
         >
-          RR<span className="text-primary">.</span>
+          RR.
         </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <a
                 href={link.href}
-                key={index}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                key={link.href}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface transition-colors"
               >
                 {link.label}
               </a>
@@ -57,7 +61,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
+        {/* Contact Button */}
         <div className="hidden md:block">
           <Button size="sm" onClick={handleContactClick}>
             Contact Me
@@ -66,6 +70,12 @@ export const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
+          type="button"
+          aria-label={
+            isMobileMenuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
           className="md:hidden p-2 text-foreground cursor-pointer"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
@@ -77,18 +87,20 @@ export const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden glass-strong animate-fade-in">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <a
                 href={link.href}
-                key={index}
+                key={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-foreground py-2"
+                className="text-lg text-muted-foreground hover:text-foreground py-2 transition-colors"
               >
                 {link.label}
               </a>
             ))}
 
-            <Button onClick={handleContactClick}>Contact Me</Button>
+            <Button onClick={handleContactClick}>
+              Contact Me
+            </Button>
           </div>
         </div>
       )}
