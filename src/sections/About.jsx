@@ -2,28 +2,28 @@ import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 
 const highlights = [
   {
-    icon: Code2,
-    title: "Backend Focus",
+    icon: Lightbulb,
+    title: "Problem First",
     description:
-      "I work mainly with application logic, APIs, databases, integrations, and the systems behind user-facing features.",
+      "I like starting with the real problem, not the technology. First I figure out what needs to happen, then I choose the simplest approach that can actually work.",
+  },
+  {
+    icon: Code2,
+    title: "Backend Builder",
+    description:
+      "Most of my work is around Python, APIs, databases, automation, integrations, and the logic that makes applications actually function.",
   },
   {
     icon: Rocket,
-    title: "Production Work",
+    title: "Ship It",
     description:
-      "My experience includes internal backend services, deployed applications, client releases, payments, and AI integrations.",
+      "I care about getting software into a usable state — testing it, fixing issues, deploying it, and improving it after real feedback.",
   },
   {
     icon: Users,
-    title: "Team Development",
+    title: "Real Work",
     description:
-      "I have worked with Git branches, pull requests, code review, testing, debugging, and technical documentation.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Product Thinking",
-    description:
-      "I try to understand why a feature is needed, not only how to code it, and turn requirements or feedback into working software.",
+      "I have worked both inside a development team and directly with clients, where communication, changing requirements, and ownership matter as much as writing code.",
   },
 ];
 
@@ -49,50 +49,57 @@ export const About = () => {
               </span>
 
               <h2 className="text-4xl md:text-5xl font-bold leading-tight mt-4 animate-fade-in animation-delay-100 text-secondary-foreground">
-                Backend development
+                I like figuring out
                 <span className="font-serif italic font-normal text-white">
                   {" "}
-                  with real product context.
+                  what actually needs to be built.
                 </span>
               </h2>
             </div>
 
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
+            <div className="space-y-5 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I&apos;m Roman Rochniak, a Python Software Developer focused
-                mainly on backend development. I enjoy working with the part
-                of a product that handles application logic, APIs, data,
-                integrations, and the workflows behind what users see on the
-                screen.
+                I&apos;m Roman Rochniak, a software developer who enjoys the
+                part of development where the answer is not obvious yet. A
+                client has a repetitive task, a workflow is breaking, data has
+                to move between systems, or a feature needs to work reliably —
+                that&apos;s the kind of problem I like digging into.
               </p>
 
               <p>
-                My experience includes working on internal Python services in
-                a team environment, building database-backed application
-                logic, debugging backend issues, testing changes, and
-                documenting service behavior. I&apos;ve also delivered a
-                production website for a real client from the first
-                requirements through launch and ongoing updates.
+                I work mostly with Python and backend technologies, but I
+                don&apos;t think of myself as someone who just writes API
+                endpoints. I like understanding how the whole process works,
+                where the bottleneck is, what can be automated, and what the
+                simplest useful solution should look like.
               </p>
 
               <p>
-                I also build my own applications to go deeper into backend
-                engineering. My projects include membership and payment
-                workflows, authentication, relational data, AI integrations,
-                and deployed systems that I can continue improving after the
-                first release.
+                That has meant working on backend services inside a development
+                team, building scrapers and automation tools, creating client
+                software, debugging production issues, working with databases
+                and integrations, and taking projects from an early idea to a
+                deployed product.
+              </p>
+
+              <p>
+                I&apos;m still constantly improving my technical depth, but the
+                way I approach work is already simple: understand the problem,
+                build something useful, test it properly, and take
+                responsibility for whether it actually works.
               </p>
             </div>
 
             {/* Personal Statement */}
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-                <p className="text-lg font-medium italic text-foreground">
-                  &quot;You can&apos;t climb the ladder of success with your hands in your pockets.&quot;
-                </p>
+              <p className="text-lg font-medium italic text-foreground">
+                &quot;You can&apos;t climb the ladder of success with your hands
+                in your pockets.&quot;
+              </p>
 
-                <p className="mt-3 text-sm text-primary font-medium">
-                  — Arnold Schwarzenegger
-                </p>
+              <p className="mt-3 text-sm text-primary font-medium">
+                — Arnold Schwarzenegger
+              </p>
             </div>
           </div>
 

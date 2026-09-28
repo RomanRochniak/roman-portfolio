@@ -93,34 +93,41 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Python Software Developer • Backend Systems
+                Python Software Developer • Backend • Automation
               </span>
             </div>
 
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Building reliable
+                I turn real problems
                 <br />
 
                 <span className="text-primary glow-text">
-                  Python
+                  into working
                 </span>
 
                 <br />
 
                 <span className="font-serif italic font-normal text-white">
-                  backend systems.
+                  software.
                 </span>
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                I&apos;m Roman Rochniak, a Python Software Developer
-                focused on backend systems, APIs, data flows, and
-                integrations. I&apos;ve worked on internal Python
-                services, delivered software for a real client, and
-                built deployed applications with payments, AI
-                features, databases, and production workflows.
+                I&apos;m Roman Rochniak, a software developer who likes
+                figuring out what actually needs to be solved and then building
+                the solution. I work with Python, backend systems, APIs,
+                automation, databases, and integrations — from internal
+                services and client work to deployed applications used in the
+                real world.
+              </p>
+
+              <p className="text-base text-muted-foreground/80 max-w-lg animate-fade-in animation-delay-300">
+                I&apos;m most comfortable when the problem is not perfectly
+                defined yet: understanding the requirements, choosing a simple
+                approach, building it, fixing what breaks, and getting it into
+                production.
               </p>
             </div>
 
@@ -224,14 +231,14 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                {/* Backend Badge */}
+                {/* Python Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
                   <div className="text-xl font-bold text-primary">
                     Python
                   </div>
 
                   <div className="text-xs text-muted-foreground">
-                    Backend
+                    Backend & Automation
                   </div>
                 </div>
               </div>

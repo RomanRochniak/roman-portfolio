@@ -10,7 +10,7 @@ const certificates = [
     title: "CS50 Web Programming with Python and JavaScript",
     issuer: "HarvardX",
     description:
-      "Web development with Python, Django, JavaScript, SQL, APIs, testing, authentication, and full-stack application development.",
+      "Advanced web development with Python, Django, JavaScript, SQL, APIs, authentication, testing, scalability, and full-stack application development.",
     link: "https://certificates.cs50.io/77ce24f2-e0af-4590-bc64-9779f80e41f6.pdf?size=letter",
     icon: GraduationCap,
   },
@@ -18,7 +18,7 @@ const certificates = [
     title: "Python Mega Course: Build 20 Real-World Apps and AI Agents",
     issuer: "Udemy",
     description:
-      "Hands-on Python training through practical applications, automation, APIs, web development, data workflows, and AI-powered projects.",
+      "Hands-on Python training through real applications involving automation, APIs, web development, data processing, integrations, and AI-powered software.",
     link: "https://www.udemy.com/certificate/UC-1e73189f-fc11-457e-8a9e-2be9ca1a6217/",
     icon: Code2,
   },
@@ -26,7 +26,7 @@ const certificates = [
     title: "Postman API Fundamentals",
     issuer: "Postman Academy",
     description:
-      "Practical API work with HTTP requests, responses, collections, environments, testing, authentication, and API development workflows.",
+      "Practical API development workflows covering HTTP requests and responses, collections, environments, authentication, testing, debugging, and API collaboration.",
     link: "https://verify.skilljar.com/c/8thenq3ag4gj",
     icon: Award,
   },
@@ -34,7 +34,7 @@ const certificates = [
     title: "Additional Software Development Certificate",
     issuer: "Udemy",
     description:
-      "Additional technical training focused on practical software development concepts and hands-on implementation.",
+      "Additional hands-on technical training focused on software development concepts, practical implementation, and building working applications.",
     link: "https://www.udemy.com/certificate/UC-c81e0ba9-77bf-42f6-b5ef-b03e5d33680e/",
     icon: Code2,
   },
@@ -69,7 +69,8 @@ export const Testimonials = () => {
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
             Selected certifications covering Python, backend development,
-            APIs, web applications, and practical software engineering.
+            APIs, web applications, automation, and practical software
+            engineering.
           </p>
         </div>
 

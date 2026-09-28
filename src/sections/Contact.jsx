@@ -7,6 +7,7 @@ import {
   MapPin,
   Send,
 } from "lucide-react";
+
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -127,18 +128,17 @@ export const Contact = () => {
           </span>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-5 sm:mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Let&apos;s talk about
+            Have a problem worth
             <span className="font-serif italic font-normal text-white">
               {" "}
-              software and real products.
+              solving?
             </span>
           </h2>
 
           <p className="text-sm sm:text-base text-muted-foreground animate-fade-in animation-delay-200 max-w-2xl mx-auto">
-            I&apos;m open to software engineering and Python backend
-            opportunities where I can contribute to real products, backend
-            systems, APIs, integrations, and the engineering work behind
-            them.
+            Whether you&apos;re building a product, automating a workflow,
+            improving a backend system, or trying to turn an idea into working
+            software, I&apos;m always open to a conversation.
           </p>
         </div>
 
@@ -212,7 +212,7 @@ export const Contact = () => {
                   id="message"
                   rows={5}
                   required
-                  placeholder="Tell me about the role, project, or team..."
+                  placeholder="Tell me what you're building or what problem you're trying to solve..."
                   value={formData.message}
                   onChange={(event) =>
                     setFormData({
@@ -331,16 +331,16 @@ export const Contact = () => {
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse flex-shrink-0" />
 
                 <span className="font-medium">
-                  Open to Software Opportunities
+                  Open to Opportunities & Projects
                 </span>
               </div>
 
               <p className="text-muted-foreground text-sm leading-relaxed">
-                I&apos;m interested in software engineering and Python backend
-                roles involving APIs, databases, integrations, backend
-                workflows, and real product development. I&apos;m always glad
-                to connect with engineering teams and discuss where my
-                experience could be useful.
+                I&apos;m open to software roles, freelance work, and interesting
+                projects where there&apos;s a real technical problem to solve.
+                Backend systems, automation, APIs, integrations, internal tools,
+                or turning an early idea into something usable — if the work is
+                practical and meaningful, I&apos;m interested.
               </p>
             </div>
           </div>

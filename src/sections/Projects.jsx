@@ -5,13 +5,15 @@ const projects = [
   {
     title: "Rosha Club / CapstoneGym",
     description:
-      "A deployed membership platform where I built the backend around users, memberships, payments, relational data, community workflows, and an AI assistant. The Stripe payment flow updates membership state only after payment confirmation, while the AI feature works with user context, conversation history, caching, rate limiting, and external model integration.",
+      "A deployed membership management platform built around real backend workflows: users, memberships, payments, authentication, relational data, protected actions, and an AI assistant. I designed the Stripe payment lifecycle so membership access is granted only after confirmed payment events, while the AI system works with live application context, conversation history, caching, rate limiting, timeout handling, and per-session ownership rules.",
     image: "/projects/capstonegym.png",
     tags: [
       "Python",
       "Django",
+      "Django REST Framework",
       "PostgreSQL",
       "Stripe",
+      "JWT",
       "Gemini API",
       "Docker",
     ],
@@ -21,7 +23,7 @@ const projects = [
   {
     title: "Andriy Rochnyak Photography",
     description:
-      "A production website built for a professional photographer from the first design discussions through launch and ongoing updates. The main challenge was presenting large, high-resolution image collections without making the site feel slow, while keeping galleries, navigation, and mobile layouts clean and easy to use.",
+      "A production website built for a professional photographer from early design discussions through launch and ongoing updates. The main challenge was presenting large, high-resolution photography collections without making the site feel slow, while keeping galleries, navigation, responsive layouts, SEO, and deployment reliable across devices.",
     image: "/projects/andriy-photography.png",
     tags: [
       "React",
@@ -64,9 +66,9 @@ export const Projects = () => {
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of work involving backend systems, payments, AI
-            integrations, client requirements, deployment, and real product
-            decisions.
+            A selection of production work involving backend systems,
+            payments, AI integrations, client requirements, deployment,
+            performance, and real product decisions.
           </p>
         </div>
 

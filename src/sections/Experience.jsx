@@ -1,17 +1,68 @@
 const experiences = [
   {
+    period: "2024 — Present",
+    role: "Freelance Software Developer",
+    company: "Independent • Backend, Automation & Custom Software",
+    description:
+      "I work directly with clients who usually come with a problem, not a perfect technical specification. My job is to understand what is actually slowing them down, design a practical solution, build it, and make sure it keeps working after launch.",
+    highlights: [
+      "Build custom Python tools and automation workflows around real client needs instead of forcing problems into predefined templates.",
+      "Develop web scrapers that collect, clean, transform, and structure data from client-specified sources, replacing repetitive manual work with reusable processes.",
+      "Build Telegram bots and automation systems for notifications, user commands, scheduled operations, and recurring workflows.",
+      "Develop backend APIs, integrations, and internal tools using Python-based frameworks and relational databases.",
+      "Turn vague or changing requirements into clear technical plans, choosing solutions that are simple enough to maintain but strong enough to solve the actual problem.",
+      "Own projects end to end: understanding the problem, architecture, implementation, testing, debugging, deployment, and post-launch support.",
+    ],
+    technologies: [
+      "Python",
+      "Django",
+      "FastAPI",
+      "Flask",
+      "PostgreSQL",
+      "Web Scraping",
+      "Telegram Bot API",
+      "REST APIs",
+      "Docker",
+    ],
+    current: true,
+  },
+
+  {
+    period: "2025 — Present",
+    role: "Full-stack Developer",
+    company: "Andriy Rochnyak Photography • Production Client Project",
+    description:
+      "Built and continue to maintain a production website for an internationally awarded fine-art photographer. The work goes beyond writing frontend code — it includes understanding the client's visual goals, making technical tradeoffs, shipping releases, and improving the product based on real feedback.",
+    highlights: [
+      "Turned client ideas and visual requirements into practical product decisions, reusable components, and production releases.",
+      "Built image-focused galleries, sliders, lightboxes, responsive layouts, and navigation designed around large professional photography collections.",
+      "Solved the main technical challenge of presenting high-resolution photography while keeping the site fast and usable across devices.",
+      "Improved image loading, page structure, metadata, SEO, and mobile behavior based on real usage and client feedback.",
+      "Manage Vercel deployments, custom-domain configuration, QA, cross-device testing, issue resolution, and ongoing releases.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel",
+    ],
+    current: true,
+  },
+
+  {
     period: "2025",
-    role: "Backend Engineering",
+    role: "Backend Developer Intern",
     company: "Springer Capital • Real Estate Investment & Advisory",
     description:
-      "Worked with a backend team on internal Python services used in real company workflows, with a focus on APIs, business logic, structured data, database operations, testing, and service documentation.",
+      "Worked inside a backend engineering team on Python services used in internal company workflows. The work involved understanding existing systems, adding features, tracing bugs, working with databases and integrations, and making sure changes were tested and maintainable.",
     highlights: [
-      "Built and contributed to three Python backend services covering meeting-data workflows, internal financial operations, and employee-related processes.",
-      "Worked on a meeting-data service that collected information from Google and Microsoft tools and converted different provider formats into a consistent structure for internal workflows.",
-      "Worked on a financial-operations service that validated internal data, applied business rules and calculations, and returned structured results through backend workflows.",
-      "Built employee-related backend workflows for employee, attendance, and performance data, including authentication, validation, filtering, pagination, and database-backed logic.",
-      "Investigated backend issues by reproducing requests, checking application behavior and database state, fixing logic problems, and adding tests to prevent regressions.",
-      "Worked through Git branches, pull requests, code review, Docker-based environments, testing, and technical documentation as part of the team development process.",
+      "Developed features across Python backend services supporting internal company workflows.",
+      "Worked on REST endpoints, request validation, authentication, filtering, pagination, and PostgreSQL-backed application logic.",
+      "Built integrations with Google and Microsoft services, converting meeting data from different providers into a consistent structure for downstream workflows.",
+      "Investigated backend defects by reproducing requests, tracing application behavior, inspecting database state, and fixing logic issues.",
+      "Added Pytest regression tests to protect fixes and reduce the chance of recurring backend problems.",
+      "Worked with Docker, Git branches, pull requests, code review, and service documentation as part of the team's development workflow.",
     ],
     technologies: [
       "Python",
@@ -23,28 +74,6 @@ const experiences = [
       "Pytest",
     ],
     current: false,
-  },
-  {
-    period: "2025 — Present",
-    role: "Freelance Software Developer",
-    company: "Professional Photography Client",
-    description:
-      "Own the development and ongoing support of a production website for a professional photographer, working directly with the client from early design discussions through launch and follow-up releases.",
-    highlights: [
-      "Turned client ideas and visual requirements into practical product decisions, reusable website components, and production releases.",
-      "Built image-focused galleries, sliders, lightboxes, responsive layouts, and navigation designed around large professional photography collections.",
-      "Handled the main technical tradeoff of the project: keeping high-resolution photography visually strong without making the website feel slow.",
-      "Improved image loading, page structure, metadata, SEO details, and mobile behavior based on real feedback from the live website.",
-      "Managed Vercel deployments, custom-domain setup, cross-device checks, issue fixing, and ongoing client-requested updates after launch.",
-    ],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Vercel",
-    ],
-    current: true,
   },
 ];
 
@@ -68,18 +97,19 @@ export const Experience = () => {
           </span>
 
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Building software with
+            From problem to
             <span className="font-serif italic font-normal text-white">
               {" "}
-              real responsibility.
+              working software.
             </span>
           </h2>
 
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            My experience includes Python backend development in a team
-            environment and end-to-end software delivery for a real client,
-            from requirements and implementation to testing, deployment,
-            debugging, and ongoing updates.
+            I&apos;ve worked in different situations — inside a backend team,
+            directly with clients, and independently on software projects.
+            The common part is always the same: understand the problem,
+            make sensible technical decisions, build the solution, and take
+            responsibility for getting it into a working state.
           </p>
         </div>
 
